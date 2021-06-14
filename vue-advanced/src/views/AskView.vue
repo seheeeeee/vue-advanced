@@ -14,11 +14,10 @@ export default {
     }
   },
   created(){
-    var vm = this;
     fetchAskList()
-    .then(function(response){
+    .then(response => {
       console.log(response);
-      vm.users = response.data;
+      this.users = response.data;
     })
     .catch(function(error){
       console.log(error);
