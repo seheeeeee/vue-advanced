@@ -1,6 +1,9 @@
 <template>
   <div>
-      <div v-for="user in fetchedAsk">{{user.title}}</div>
+      <p v-for="ask in fetchedAsk">
+        <a v-bind:href="ask.url" target="_blank">{{ ask.title }}</a>
+        <small>{{ask.time_ago}} by {{ask.user}}</small>
+      </p>
   </div>
 </template>
 
@@ -26,14 +29,6 @@ export default {
   },
   created(){
     this.$store.dispatch('FETCH_ASK');
-    // fetchAskList()
-    // .then(response => {
-    //   console.log(response);
-    //   this.users = response.data;
-    // })
-    // .catch(function(error){
-    //   console.log(error);
-    // })
   }
 }
 </script>
