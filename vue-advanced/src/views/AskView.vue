@@ -1,27 +1,23 @@
 <template>
   <div>
-      <div v-for="user in users">{{user.title}}</div>
+      <div v-for="user in this.$store.state.ask">{{user.title}}</div>
   </div>
 </template>
 
 <script>
-import {fetchAskList} from '../api/index.js';
+import { fetchAskList } from '../api/index.js';
 
 export default {
-  data(){
-    return{
-      users: [],
-    }
-  },
   created(){
-    fetchAskList()
-    .then(response => {
-      console.log(response);
-      this.users = response.data;
-    })
-    .catch(function(error){
-      console.log(error);
-    })
+    this.$store.dispatch('FETCH_ASK');
+    // fetchAskList()
+    // .then(response => {
+    //   console.log(response);
+    //   this.users = response.data;
+    // })
+    // .catch(function(error){
+    //   console.log(error);
+    // })
   }
 }
 </script>
