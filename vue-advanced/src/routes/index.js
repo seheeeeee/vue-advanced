@@ -35,6 +35,7 @@ export const router = new VueRouter({
       component: ItemView,
     },
     {
+      //user prams id 정보로 이동
       path: '/user/:id',
       component: UserView,
     }
