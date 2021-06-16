@@ -23,10 +23,15 @@ function fetchUserInfo(username){
     return axios.get(`${config.baseUrl}user/${username}.json`)
 }
 
+function fetchItem(id){
+    return axios.get(`${config.baseUrl}item/${id}.json`)
+}
+
 //3. API 함수 export
 export {
     fetchNewsList,
     fetchJobsList,
     fetchAskList,
     fetchUserInfo,
+    fetchItem,
 }
