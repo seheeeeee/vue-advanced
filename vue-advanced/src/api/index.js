@@ -19,9 +19,14 @@ function fetchAskList(){
     return axios.get(`${config.baseUrl}ask/1.json`)
 }
 
+function fetchUserInfo(username){
+    return axios.get(`${config.baseUrl}user/${username}.json`)
+}
+
 //3. API 함수 export
 export {
     fetchNewsList,
     fetchJobsList,
     fetchAskList,
+    fetchUserInfo,
 }
